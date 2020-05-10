@@ -10,6 +10,7 @@ import com.artemis.ComponentMapper;
 import com.artemis.annotations.All;
 import com.artemis.annotations.One;
 import com.artemis.systems.IteratingSystem;
+import com.mycompany.artemishelloworld.components.CountComponent;
 import com.mycompany.artemishelloworld.components.Goodbye;
 import com.mycompany.artemishelloworld.components.Hello;
 
@@ -27,6 +28,7 @@ public class GoodbyeSystem extends IteratingSystem {
             System.out.println("" + i + " Has Hello " + mHello.get(i).message() );
         }else{
              world.edit(i).create(Hello.class).message("Adding one last Hello.");
+             world.edit(i).create(CountComponent.class).current.setCount(0).setId(i);
         }
          if( mGoodbye.has(i) ){
             System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message() );

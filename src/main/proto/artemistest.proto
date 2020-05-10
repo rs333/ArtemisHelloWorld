@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package artemishelloworld;
+
+option java_package="com.mycompany.artemishelloworld.proto";
+option java_outer_classname="ArtemisTest";
+
+message HelloWorld {
+  int64 id=1;
+  string message = 2;
+  int64 count=3;
+
+}
+
+message Count {
+   int64 id=1;
+   int64 count=2;
+}

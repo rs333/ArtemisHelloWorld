@@ -12,21 +12,23 @@ import com.artemis.annotations.One;
 import com.artemis.systems.IteratingSystem;
 import com.mycompany.artemishelloworld.components.Goodbye;
 import com.mycompany.artemishelloworld.components.Hello;
+import com.mycompany.artemishelloworld.components.CountComponent;
 
 
-@All({Goodbye.class, Hello.class})
+@All({Goodbye.class, Hello.class, CountComponent.class})
 public class MultiSystem extends IteratingSystem {
 
     protected ComponentMapper<Hello> mHello;
     protected ComponentMapper<Goodbye> mGoodbye;
+    protected ComponentMapper<CountComponent> mCount;
 
     @Override
     protected void process(int i) {
         System.out.println("MultiSystem: " + i);
-
+        mCount.get(i).current.setCount(mCount.get(i).current.getCount()+1);
         System.out.println("" + i + " Has Hello " + mHello.get(i).message());
         System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message());
-
+        System.out.println("" + i + " Count = " + mCount.get(i).current.getCount());
     }
 
 }

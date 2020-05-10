@@ -31,7 +31,7 @@ public class ArtemisHelloWorld {
         world.edit(entityId).create(Hello.class).message( "Hello-world!");
 
         // 4. Run the world. HelloWorldSystem should print the hello world message.
-        for(int i=0; i<10; i++)
+        for(int i=0; i<10000; i++)
         world.process();
     }
     
