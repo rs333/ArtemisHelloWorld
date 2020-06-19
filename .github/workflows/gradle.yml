@@ -20,7 +20,7 @@ jobs:
       id: cache-protobuf
       uses: actions/cache@v2
       with:
-          path: protobuf-3.11.3
+          path: protobuf-3.11.3/*
           key: ${ runner.os }}-protobuf
     - name: Build protobuf
       if: steps.cache-protobuf.outputs.cache-hit != 'true'
@@ -30,7 +30,6 @@ jobs:
         cd protobuf-3.11.3 
         ./configure DIST_LANG=cpp --prefix=/usr
         make
-        sudo make install
         
     - name: Install protobuf
       run: |
