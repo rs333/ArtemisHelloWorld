@@ -32,7 +32,7 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-mainClassName = 'ArtemisHelloWorld'
+mainClassName = 'com.mycompany.artemishelloworld.ArtemisHelloWorld'
 group = 'com.mycompany'
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.11'

@@ -9,12 +9,5 @@ import com.artemis.Component;
 import com.mycompany.artemishelloworld.proto.ArtemisTest.Count;
 
 public class CountComponent extends Component {
-    public Count.Builder current = Count.newBuilder();
-    public Count.Builder last = Count.newBuilder();
-    public Count.Builder temp;
-    public void swap(){
-       temp = last;
-       last = current;
-       current = temp;
-    }
+    public Count.Builder data = Count.newBuilder();
 }

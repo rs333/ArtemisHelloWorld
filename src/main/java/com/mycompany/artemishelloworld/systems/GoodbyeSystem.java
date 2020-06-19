@@ -25,13 +25,13 @@ public class GoodbyeSystem extends IteratingSystem {
     protected void process(int i) {
         System.out.println("GoodbyeSystem: " + i );
         if( mHello.has(i) ){
-            System.out.println("" + i + " Has Hello " + mHello.get(i).message() );
+            System.out.println("" + i + " Has Hello " + mHello.get(i).data.getMessage() );
         }else{
-             world.edit(i).create(Hello.class).message("Adding one last Hello.");
-             world.edit(i).create(CountComponent.class).current.setCount(0).setId(i);
+             world.edit(i).create(Hello.class).data.setMessage("Adding one last Hello.");
+             world.edit(i).create(CountComponent.class).data.setCount(0).setId(i);
         }
          if( mGoodbye.has(i) ){
-            System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message() );
+            System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message );
            
         }
         

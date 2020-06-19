@@ -25,10 +25,10 @@ public class MultiSystem extends IteratingSystem {
     @Override
     protected void process(int i) {
         System.out.println("MultiSystem: " + i);
-        mCount.get(i).current.setCount(mCount.get(i).current.getCount()+1);
-        System.out.println("" + i + " Has Hello " + mHello.get(i).message());
-        System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message());
-        System.out.println("" + i + " Count = " + mCount.get(i).current.getCount());
+        mCount.get(i).data.setCount(mCount.get(i).data.getCount()+1);
+        System.out.println("" + i + " Has Hello " + mHello.get(i).data.getMessage());
+        System.out.println("" + i + " Has Goodbye " + mGoodbye.get(i).message);
+        System.out.println("" + i + " Count = " + mCount.get(i).data.getCount());
     }
 
 }

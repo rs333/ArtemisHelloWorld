@@ -20,11 +20,11 @@ public class InputSystem extends IteratingSystem {
     @Override
     protected void process(int id) {
         System.out.println("HelloSystem: " + id);
-        System.out.println("" + id + " Has " + mHello.get(id).message());
+        System.out.println("" + id + " Has " + mHello.get(id).data.getMessage());
 
         if (world.getEntity(0).getComponent(Input.class).count == 1) {
             int entityId = world.create();
-            world.edit(entityId).create(Goodbye.class).message("Get ready to say goodbye world!");
+            world.edit(entityId).create(Goodbye.class).message=("Get ready to say goodbye world!");
         }
     }
 }

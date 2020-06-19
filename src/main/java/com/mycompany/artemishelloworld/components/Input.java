@@ -8,10 +8,6 @@ package com.mycompany.artemishelloworld.components;
 import com.artemis.Component;
 
 public class Input extends Component{
-    private int input;
+    public int input;
     public int count;
-    public void input(int message){
-        this.input = message;
-    }
-    public int input(){ return input; }
 }
