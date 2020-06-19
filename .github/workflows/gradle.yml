@@ -16,26 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Cache protobuf
-      id: cache-protobuf
-      uses: actions/cache@v2
-      with:
-          path: protobuf-3.11.3/*
-          key: ${ runner.os }}-protobuf
-    - name: Build protobuf
-      if: steps.cache-protobuf.outputs.cache-hit != 'true'
-      run: |
-        curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.3/protobuf-all-3.11.3.tar.gz
-        tar xzvf protobuf-all-3.11.3.tar.gz
-        cd protobuf-3.11.3 
-        ./configure DIST_LANG=cpp --prefix=/usr
-        make
-        
     - name: Install protobuf
       run: |
-        cd protobuf-3.11.3
-        sudo make install
-        sudo ldconfig
+        sudo apt-get install protobuf
     
     - uses: actions/checkout@v2
     - name: Set up JDK 1.11
