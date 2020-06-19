@@ -35,7 +35,7 @@ jobs:
     - name: Install protobuf
       run: |
         cd protobuf-3.11.3
-        sudo make instal
+        sudo make install
         sudo ldconfig
     
     - uses: actions/checkout@v2
