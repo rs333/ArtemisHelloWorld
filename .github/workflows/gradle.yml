@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install protobuf
       run: |
-        sudo apt-get install protobuf
+        sudo snap install protobuf
     
     - uses: actions/checkout@v2
     - name: Set up JDK 1.11
